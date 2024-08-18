@@ -1,10 +1,14 @@
 pipeline {
     agent { label 'dot' }
     options {
-        timeout(time: 1, unit: 'HOURS') 
+        timeout(time: 1, unit: 'HOURS')
+                                                 
     }
     triggers {
         pollSCM('* * * * *')
+    tools{
+        dotnetsdk 'DOTNET8'
+    }    
     }
     stages {
         stage('SCM') {
