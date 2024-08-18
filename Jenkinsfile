@@ -6,7 +6,7 @@ pipeline {
     }
     triggers {
         pollSCM('* * * * *')
-    tools{
+    tools {
         dotnetsdk 'DOTNET8'
     }    
     }
