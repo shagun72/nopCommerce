@@ -6,10 +6,11 @@ pipeline {
     }
     triggers {
         pollSCM('* * * * *')
+    }    
     tools {
         dotnetsdk 'DOTNET8'
     }    
-    }
+    
     stages {
         stage('SCM') {
             steps { 
