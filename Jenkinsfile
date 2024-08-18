@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'dot' }
     options {
-        timeout(time: 1, unit: 'DAY') 
+        timeout(time: 1, unit: 'HOURS') 
     }
     triggers {
         pollSCM('* * * * *')
@@ -21,7 +21,7 @@ pipeline {
         
             post {
                 success {
-                zip zipFile: './published',
+                    zip zipFile: './published.zip',
                     archive: true,
                     dir: './published'
                 }
